@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Wine Class</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Alcohol" placeholder="Alcohol" required="required" />
+        <input type="text" name="Malic acid" placeholder="Malic acid" required="required" />
+		    <input type="text" name="Ash" placeholder="Ash" required="required" />
+        <input type="text" name="Alcalinity of Ash" placeholder="Alcalinity of Ash" required="required" />
+        <input type="text" name="Magnesium" placeholder="Magnesium" required="required" />
+        <input type="text" name="Total phenols" placeholder="Total phenols" required="required" />
+        <input type="text" name="Flavanoids" placeholder="Flavanoids" required="required" />
+        <input type="text" name="Nonflavanoids phenols" placeholder="Nonflavanoids phenols" required="required" />
+        <input type="text" name="Proanthocyanins" placeholder="Proanthocyanins" required="required" />
+        <input type="text" name="Color Intensity" placeholder="Color Intensity" required="required" />
+        <input type="text" name="Hue" placeholder="Hue" required="required" />
+        <input type="text" name="OD280/OD315 of diluted wines" placeholder="OD280/OD315 of diluted wines" required="required" />
+        <input type="text" name="Proline" placeholder="Proline" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
